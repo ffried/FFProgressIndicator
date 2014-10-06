@@ -50,6 +50,7 @@ static NSUInteger const FFProgressIndicatorAnimationSteps = 1000;
     self.circleLayer.strokeColor = self.tintColor.CGColor;
     self.circleLayer.lineWidth = self.progressBarStrokeWidth;
     self.circleLayer.path = [self bezierPathForPercent:0.0f].CGPath;
+    self.circleLayer.contentsScale = [UIScreen mainScreen].scale;
     [self.layer addSublayer:self.circleLayer];
     
     [self setupStopButton];
