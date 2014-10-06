@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9GS-Gi-gjV">
+                                <rect key="frame" x="260" y="50" width="80" height="30"/>
+                                <state key="normal" title="Start / Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startIndicator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pXD-JE-USI"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U51-a0-cxQ" customClass="FFProgressIndicatorView">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="hLo-JH-NOn"/>
+                                    <constraint firstAttribute="height" constant="200" id="vDa-9u-MPd"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="stopPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nbb-hX-gRs"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="U51-a0-cxQ" secondAttribute="centerX" id="Bfe-jm-nfD"/>
+                            <constraint firstAttribute="centerX" secondItem="9GS-Gi-gjV" secondAttribute="centerX" id="c1N-bn-8MP"/>
+                            <constraint firstItem="9GS-Gi-gjV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="ctk-BQ-QrC"/>
+                            <constraint firstAttribute="centerY" secondItem="U51-a0-cxQ" secondAttribute="centerY" id="hPI-2q-bm7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="U51-a0-cxQ" id="yqo-EX-G1m"/>
+                        <outlet property="startButton" destination="9GS-Gi-gjV" id="eJN-Wl-oZA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="367" y="361"/>
+        </scene>
+    </scenes>
+</document>
